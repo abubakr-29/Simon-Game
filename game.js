@@ -7,7 +7,7 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).keypress(function() {
+$(document).on("keypress touchstart", function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
@@ -50,7 +50,7 @@ function checkAnswer(currentLevel) {
         $("body").removeClass("game-over");
       }, 200);
 
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").text("Game Over, Press Any Key or Touch Screen to Restart");
 
       startOver();
     }
